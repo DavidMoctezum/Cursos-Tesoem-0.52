@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Curso · TESOEM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<style>
+  .curso-cuerpo { display: grid; grid-template-columns: 1fr 320px; gap: var(--s7); align-items: start; padding: var(--s6) 0 var(--s8); }
+  .lateral { position: sticky; top: 88px; }
+  @media (max-width: 880px) {
+    .curso-cuerpo { grid-template-columns: 1fr; gap: var(--s5); }
+    .lateral { position: static; }
+  }
+</style>
+</head>
+<body>
+<header class="nav" id="nav"></header>
+
+<div id="hero" class="curso-hero">
+  <div class="shell"><p class="cargando" style="color:#cbb0ba">Cargando curso…</p></div>
+</div>
+
+<main class="shell curso-cuerpo">
+  <div id="contenido"></div>
+  <aside class="lateral" id="lateral"></aside>
+</main>
+
+<script src="../js/config.js"></script>
+<script src="../js/mock/mockServer.js"></script>
+<script src="../js/utils/dom.js"></script>
+<script src="../js/utils/session.js"></script>
+<script src="../js/utils/validacion.js"></script>
+<script src="../js/api/api.js"></script>
+<script src="../js/api/services.js"></script>
+<script src="../js/components/ui.js"></script>
+<script src="../js/controllers/curso.js"></script>
+</body>
+</html>

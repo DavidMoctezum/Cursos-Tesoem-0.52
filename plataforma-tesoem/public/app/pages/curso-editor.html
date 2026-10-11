@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Editor de curso · TESOEM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<style>
+  .editor { max-width: 760px; margin: 0 auto; padding: var(--s6) var(--s5) var(--s8); }
+  .fila-leccion { display: flex; gap: var(--s2); margin-bottom: var(--s2); }
+  .fila-leccion input { flex: 1; }
+</style>
+</head>
+<body>
+<header class="nav" id="nav"></header>
+
+<main class="editor">
+  <div class="cabecera-pagina">
+    <h1 id="titulo-pagina">Nuevo curso</h1>
+    <p class="silencio" style="margin:0">Los alumnos verán esta información en el catálogo.</p>
+  </div>
+
+  <div id="aviso"></div>
+
+  <form id="form-curso" novalidate>
+    <div class="campo">
+      <label for="titulo">Título del curso</label>
+      <input type="text" id="titulo" placeholder="Java para aplicaciones web con Servlets">
+      <span class="error-campo"></span>
+    </div>
+
+    <div class="campo">
+      <label for="resumen">Resumen</label>
+      <input type="text" id="resumen" maxlength="140" placeholder="Una línea que explique qué se lleva el alumno">
+      <span class="error-campo"></span>
+      <span class="ayuda">Es lo que aparece en la tarjeta del catálogo. Máximo 140 caracteres.</span>
+    </div>
+
+    <div class="campo">
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" placeholder="Qué se aprende, cómo se trabaja y qué necesita saber el alumno antes de empezar."></textarea>
+      <span class="error-campo"></span>
+    </div>
+
+    <div class="form-doble">
+      <div class="campo">
+        <label for="idCategoria">Categoría</label>
+        <select id="idCategoria"></select>
+        <span class="error-campo"></span>
+      </div>
+      <div class="campo">
+        <label for="nivel">Nivel</label>
+        <select id="nivel">
+          <option>Básico</option>
+          <option>Intermedio</option>
+          <option>Avanzado</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-doble">
+      <div class="campo">
+        <label for="publicado">Visibilidad</label>
+        <select id="publicado">
+          <option value="false">Borrador — solo yo lo veo</option>
+          <option value="true">Enviar a revisión — se publica al aprobarse</option>
+        </select>
+      </div>
+    </div>
+
+    <h2 style="margin-top:var(--s6)">Lecciones</h2>
+    <p class="silencio">El avance del alumno se calcula con estas lecciones.</p>
+    <div id="lecciones"></div>
+    <button type="button" class="btn btn-linea btn-sm" id="btn-agregar">Agregar lección</button>
+
+    <div class="fila" style="margin-top:var(--s6)">
+      <button class="btn btn-primario" type="submit" id="btn-guardar">Guardar curso</button>
+      <a class="btn btn-linea" href="panel.html">Cancelar</a>
+      <button class="btn btn-peligro oculto" type="button" id="btn-retirar">Retirar del catálogo</button>
+    </div>
+  </form>
+
+  <section id="zona-materiales" class="oculto" style="margin-top:var(--s7)">
+    <h2>Material de apoyo</h2>
+    <div id="lista-materiales"></div>
+    <form id="form-material" class="fila" style="margin-top:var(--s4);align-items:flex-end">
+      <div class="campo crece" style="margin:0"><label for="mat-titulo">Título</label><input type="text" id="mat-titulo"></div>
+      <div class="campo" style="margin:0"><label for="mat-tipo">Tipo</label>
+        <select id="mat-tipo"><option>PDF</option><option>Video</option><option>Enlace</option><option>Ejercicio</option></select>
+      </div>
+      <div class="campo crece" style="margin:0"><label for="mat-url">Enlace</label><input type="url" id="mat-url" placeholder="https://"></div>
+      <button class="btn btn-linea" type="submit">Agregar</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/config.js"></script>
+<script src="../js/mock/mockServer.js"></script>
+<script src="../js/utils/dom.js"></script>
+<script src="../js/utils/session.js"></script>
+<script src="../js/utils/validacion.js"></script>
+<script src="../js/api/api.js"></script>
+<script src="../js/api/services.js"></script>
+<script src="../js/components/ui.js"></script>
+<script src="../js/controllers/cursoEditor.js"></script>
+</body>
+</html>

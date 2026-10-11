@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iniciar sesión · TESOEM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<style>
+  .acceso { max-width: 420px; margin: var(--s8) auto; padding: 0 var(--s5); }
+  .demo { font-size: var(--t-xs); color: var(--moss); border-top: 1px solid var(--line); padding-top: var(--s3); margin-top: var(--s5); }
+  .demo code { color: var(--pine); }
+</style>
+</head>
+<body>
+<!-- BARRA DE NAVEGACIÓN (se dibuja sola con JavaScript) -->
+<header class="nav" id="nav"></header>
+
+<!-- ============================================================
+      FORMULARIO DE INICIO DE SESIÓN
+    ============================================================ -->
+<main class="acceso">
+  <h1>Entra a tu cuenta</h1>
+  <p class="silencio">Usa el correo con el que te registraste en la plataforma.</p>
+
+  <div class="tarjeta" style="margin-top: var(--s5)">
+    <div id="aviso"></div>
+    <form id="form-login" novalidate>
+      <div class="campo">
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" autocomplete="username" required>
+        <span class="error-campo"></span>
+      </div>
+      <div class="campo">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" autocomplete="current-password" required>
+        <span class="error-campo"></span>
+      </div>
+      <button class="btn btn-primario btn-bloque" type="submit" id="btn-entrar">Entrar</button>
+    </form>
+
+    <p class="silencio" style="margin: var(--s4) 0 0">
+      ¿Aún no tienes cuenta? <a href="registro.html">Créala aquí</a>
+    </p>
+
+    <!-- Este recuadro es solo para pruebas (modo simulado).-->
+    <div class="demo">
+      Cuentas de prueba (modo simulado)<br>
+      <code>alumno@tesoem.mx</code> · <code>profesor@tesoem.mx</code> · <code>empresa@tesoem.mx</code> · <code>admin@tesoem.mx</code><br>
+      Contraseña: <code>tesoem2026</code>
+    </div>
+  </div>
+</main>
+
+<script src="../js/config.js"></script>
+<script src="../js/mock/mockServer.js"></script>
+<script src="../js/utils/dom.js"></script>
+<script src="../js/utils/session.js"></script>
+<script src="../js/utils/validacion.js"></script>
+<script src="../js/api/api.js"></script>
+<script src="../js/api/services.js"></script>
+<script src="../js/components/ui.js"></script>
+<script src="../js/controllers/login.js"></script>
+</body>
+</html>

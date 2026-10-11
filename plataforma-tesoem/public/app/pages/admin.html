@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Administración · TESOEM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+<header class="nav" id="nav"></header>
+
+<main class="shell seccion">
+  <div class="cabecera-pagina">
+    <h1>Administración</h1>
+    <p class="silencio" style="margin:0">Cuentas, validación de profesores y categorías del catálogo.</p>
+  </div>
+
+  <section>
+    <div class="fila fila-entre" style="margin-bottom:var(--s4)">
+      <h2 style="margin:0">Usuarios</h2>
+      <form class="fila" id="form-filtro">
+        <label for="rol" class="oculto">Filtrar por rol</label>
+        <select id="rol" style="padding:0.45rem 0.6rem;border:1px solid var(--line);border-radius:var(--radius);font-family:inherit">
+          <option value="">Todos los roles</option>
+          <option value="ALUMNO">Alumnos</option>
+          <option value="PROFESOR">Profesores</option>
+          <option value="EMPRESA">Empresas</option>
+          <option value="ADMINISTRADOR">Administradores</option>
+        </select>
+        <label for="q" class="oculto">Buscar</label>
+        <input type="search" id="q" placeholder="Nombre o correo" style="padding:0.45rem 0.6rem;border:1px solid var(--line);border-radius:var(--radius);font-family:inherit">
+        <button class="btn btn-linea btn-sm" type="submit">Filtrar</button>
+      </form>
+    </div>
+    <div id="usuarios"></div>
+  </section>
+
+  <section id="revision" style="margin-top:var(--s7)">
+    <h2>Cursos por revisar</h2>
+    <p class="silencio">Los profesores envían sus cursos aquí; se publican cuando los apruebas.</p>
+    <div id="cursos-revision"></div>
+  </section>
+
+  <section id="categorias" style="margin-top:var(--s7)">
+    <h2>Categorías</h2>
+    <p class="silencio">Con estas categorías se clasifican los cursos del catálogo.</p>
+    <div id="lista-categorias" class="fila" style="margin-bottom:var(--s4)"></div>
+    <form class="fila" id="form-categoria" style="align-items:flex-end">
+      <div class="campo" style="margin:0">
+        <label for="nombre-categoria">Nueva categoría</label>
+        <input type="text" id="nombre-categoria" placeholder="Mantenimiento industrial">
+      </div>
+      <button class="btn btn-primario" type="submit">Agregar</button>
+    </form>
+  </section>
+</main>
+
+<script src="../js/config.js"></script>
+<script src="../js/mock/mockServer.js"></script>
+<script src="../js/utils/dom.js"></script>
+<script src="../js/utils/session.js"></script>
+<script src="../js/utils/validacion.js"></script>
+<script src="../js/api/api.js"></script>
+<script src="../js/api/services.js"></script>
+<script src="../js/components/ui.js"></script>
+<script src="../js/controllers/admin.js"></script>
+</body>
+</html>

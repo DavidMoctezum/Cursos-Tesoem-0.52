@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crear cuenta · TESOEM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<style>
+  .acceso { max-width: 520px; margin: var(--s7) auto; padding: 0 var(--s5); }
+</style>
+</head>
+<body>
+<!-- BARRA DE NAVEGACIÓN (se dibuja sola con JavaScript) -->
+<header class="nav" id="nav"></header>
+
+<!-- ============================================================
+      FORMULARIO DE REGISTRO
+    ============================================================ -->
+<main class="acceso">
+  <h1>Crea tu cuenta</h1>
+  <p class="silencio">Elige el tipo de cuenta según cómo vas a usar la plataforma.</p>
+
+  <div class="tarjeta" style="margin-top: var(--s5)">
+    <div id="aviso"></div>
+    <form id="form-registro" novalidate>
+      <div class="campo">
+        <label for="rol">Tipo de cuenta</label>
+        <select id="rol">
+          <option value="ALUMNO">Alumno — quiero tomar cursos</option>
+          <option value="PROFESOR">Profesor — quiero impartir cursos</option>
+          <option value="EMPRESA">Empresa — busco personal capacitado</option>
+        </select>
+        <span class="ayuda" id="ayuda-rol">Podrás inscribirte a cursos y publicar tus proyectos.</span>
+      </div>
+
+      <div class="campo">
+        <label for="nombre" id="etiqueta-nombre">Nombre completo</label>
+        <input type="text" id="nombre" autocomplete="name">
+        <span class="error-campo"></span>
+      </div>
+
+      <div class="campo">
+        <label for="correo">Correo</label>
+        <input type="email" id="correo" autocomplete="email">
+        <span class="error-campo"></span>
+      </div>
+
+      <div class="form-doble">
+        <div class="campo">
+          <label for="contrasena">Contraseña</label>
+          <input type="password" id="contrasena" autocomplete="new-password">
+          <span class="error-campo"></span>
+          <span class="ayuda">Mínimo 12 caracteres. Puede ser una frase larga.</span>
+        </div>
+        <div class="campo">
+          <label for="confirmar">Repite la contraseña</label>
+          <input type="password" id="confirmar" autocomplete="new-password">
+          <span class="error-campo"></span>
+        </div>
+      </div>
+
+      <div id="extra-alumno">
+        <div class="form-doble">
+          <div class="campo">
+            <label for="carrera">Carrera</label>
+            <input type="text" id="carrera" placeholder="Ingeniería en Sistemas">
+          </div>
+        </div>
+      </div>
+
+      <div id="extra-profesor" class="oculto">
+        <div class="campo">
+          <label for="especialidad">Área de especialidad</label>
+          <input type="text" id="especialidad" placeholder="Redes, automatización, desarrollo web…">
+          <span class="ayuda">La coordinación revisa las cuentas de profesor antes de habilitarlas.</span>
+        </div>
+      </div>
+
+      <div id="extra-empresa" class="oculto">
+        <div class="form-doble">
+          <div class="campo">
+            <label for="giro">Giro</label>
+            <input type="text" id="giro" placeholder="Manufactura, servicios…">
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primario btn-bloque" type="submit" id="btn-crear">Crear cuenta</button>
+    </form>
+
+    <p class="silencio" style="margin: var(--s4) 0 0">
+      ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+    </p>
+  </div>
+</main>
+
+<script src="../js/config.js"></script>
+<script src="../js/mock/mockServer.js"></script>
+<script src="../js/utils/dom.js"></script>
+<script src="../js/utils/session.js"></script>
+<script src="../js/utils/validacion.js"></script>
+<script src="../js/api/api.js"></script>
+<script src="../js/api/services.js"></script>
+<script src="../js/components/ui.js"></script>
+<script src="../js/controllers/registro.js"></script>
+</body>
+</html>

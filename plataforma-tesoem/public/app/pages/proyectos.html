@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Proyectos · TESOEM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+<header class="nav" id="nav"></header>
+
+<main class="shell seccion">
+  <div class="cabecera-pagina fila fila-entre">
+    <div>
+      <h1 id="titulo-pagina">Proyectos de alumnos</h1>
+      <p class="silencio" style="margin:0">Trabajo hecho durante los cursos, abierto a las empresas.</p>
+    </div>
+    <button class="btn btn-accion oculto" id="btn-nuevo">Publicar proyecto</button>
+  </div>
+
+  <form class="fila" id="form-buscar" style="margin-bottom:var(--s5)" role="search">
+    <label for="q" class="oculto">Buscar proyectos</label>
+    <input type="search" id="q" placeholder="Tecnología o palabra clave" style="max-width:320px;padding:0.55rem 0.7rem;border:1px solid var(--line);border-radius:var(--radius);font-family:inherit">
+    <button class="btn btn-linea" type="submit">Buscar</button>
+  </form>
+
+  <section id="editor-proyecto" class="tarjeta oculto" style="margin-bottom:var(--s6)">
+    <h2>Publica tu proyecto</h2>
+    <div id="aviso"></div>
+    <form id="form-proyecto" novalidate>
+      <div class="campo">
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" placeholder="Control de inventario para taller escolar">
+        <span class="error-campo"></span>
+      </div>
+      <div class="campo">
+        <label for="descripcion">¿Qué resuelve?</label>
+        <textarea id="descripcion" placeholder="Explica el problema y cómo lo resolviste."></textarea>
+        <span class="error-campo"></span>
+      </div>
+      <div class="form-doble">
+        <div class="campo">
+          <label for="tecnologias">Tecnologías</label>
+          <input type="text" id="tecnologias" placeholder="Java, MySQL, Bootstrap">
+          <span class="error-campo"></span>
+        </div>
+        <div class="campo">
+          <label for="enlace">Enlace (opcional)</label>
+          <input type="url" id="enlace" placeholder="https://github.com/…">
+        </div>
+      </div>
+      <div class="fila">
+        <button class="btn btn-primario" type="submit" id="btn-publicar">Publicar</button>
+        <button class="btn btn-linea" type="button" id="btn-cancelar">Cancelar</button>
+      </div>
+    </form>
+  </section>
+
+  <div class="rejilla" id="lista"></div>
+</main>
+
+<script src="../js/config.js"></script>
+<script src="../js/mock/mockServer.js"></script>
+<script src="../js/utils/dom.js"></script>
+<script src="../js/utils/session.js"></script>
+<script src="../js/utils/validacion.js"></script>
+<script src="../js/api/api.js"></script>
+<script src="../js/api/services.js"></script>
+<script src="../js/components/ui.js"></script>
+<script src="../js/controllers/proyectos.js"></script>
+</body>
+</html>

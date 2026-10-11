@@ -1,0 +1,52 @@
+/* TESOEM · tokens de diseño
+    Paleta institucional: guinda como color principal, crema como acento
+   de superficie y dorado reservado para botones y estados de progreso. */
+
+:root {
+  /* Color */
+  --ink: #2c0e18;
+  --pine: #7a1030;
+  --teal: #9c2643;
+  --moss: #9c8874;
+  --paper: #ffffff;
+  --surface: #ffffff;
+  --line: #e7dcc8;
+  --amber: #c79a2e;
+  --amber-soft: #f8efd8;
+  --danger: #a03226;
+  --danger-soft: #f8e6e3;
+  --ok: #7a1030;
+
+  /* Superficie crema, para secciones que necesitan diferenciarse del blanco */
+  --crema: #f8f2e4;
+  --crema-linea: #ecdfc4;
+
+  /* Tipografía */
+  --font-ui: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-read: "Newsreader", Georgia, "Times New Roman", serif;
+
+  --t-xs: 0.75rem;
+  --t-sm: 0.875rem;
+  --t-base: 1rem;
+  --t-md: 1.125rem;
+  --t-lg: 1.375rem;
+  --t-xl: 1.875rem;
+  --t-2xl: 2.5rem;
+  --t-3xl: 3.25rem;
+
+  /* Espaciado */
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+  --s8: 4.5rem;
+
+  --radius: 4px;
+  --radius-lg: 10px;
+  --shell: 1140px;
+  --shadow: 0 1px 2px rgba(44, 14, 24, 0.06), 0 6px 20px rgba(44, 14, 24, 0.06);
+}
+
